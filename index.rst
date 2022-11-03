@@ -15,14 +15,26 @@ EAI XL2 LiDAR, an ORBBEC Dabai stereo depth camera, and a suite of other sensors
 used to perform advanced robotic applications like precise autonomous positioning, SLAM, path
 planning and navigation, obstacle avoidance, traffic light recognition and so on.
 
+What's Here
+===========
+
+*   :doc:`getting_started/getting_started` - These guides will walk you through the setup process
+    for your LIMO, the remote control mobile application, and your development environments.
+*   :doc:`operation/operation` - These guides will walk you through concepts related to the
+    operation of the LIMO and the Simulation Table.
+*   :doc:`specifications/specifications` - Contains specification information for the LIMO and the
+    Simulation Table.
+
+Table of Contents:
+==================
+
 .. toctree::
     :maxdepth: 1
     :titlesonly:
-    :caption: Contents:
 
-    specifications/index.rst
-    getting_started/index.rst
-    operation/index.rst
+    getting_started/getting_started.rst
+    operation/operation.rst
+    specifications/specifications.rst
 
 .. note::
 

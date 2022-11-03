@@ -84,7 +84,7 @@ html_theme_options = {
     'navigation_depth': -1,
     # Specifies if the navigation includes hidden table(s) of contents – that is, any toctree
     # directive that is marked with the :hidden: option.
-    'include_hidden': True,
+    'includehidden': True,
     # When enabled, page subheadings are not included in the navigation.
     'titles_only': False,
     # If True, the version number is shown at the top of the sidebar.
