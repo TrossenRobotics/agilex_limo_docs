@@ -26,6 +26,8 @@ planning and navigation, obstacle avoidance, traffic light recognition and so on
 
 .. note::
 
-    Documentation written by AgileX can be found on their `limo-doc repository`_.
+    Documentation written by AgileX can be found on their `limo-doc repository`_. Much of this work
+    is derived from there. It is distributed under the MIT License which can be found `here`_.
 
 .. _`limo-doc repository`: https://github.com/agilexrobotics/limo-doc
+.. _`here`: https://github.com/agilexrobotics/limo-doc/blob/master/LICENSE
