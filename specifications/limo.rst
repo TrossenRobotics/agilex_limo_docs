@@ -1,21 +1,6 @@
-==============
-Specifications
-==============
-
-LIMO Contents
-=============
-
-Your LIMO should come with the following:
-
-*   1x LIMO Robot
-*   1x Battery
-*   1x Charger
-*   4x Mecanum Wheels
-*   2x Tracks
-*   2x Wi-Fi/Bluetooth Antennas
-*   1x Allen Wrench
-*   3x M3x12mm Screws
-*   20x M3x5mm Screws
+===================
+LIMO Specifications
+===================
 
 Specifications Overview
 =======================
