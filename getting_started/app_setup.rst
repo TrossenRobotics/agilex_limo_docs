@@ -2,13 +2,17 @@
 Mobile App Setup
 ================
 
-1.  Download and install the controller application.
+1.  Download and install the controller application to your mobile phone using the QR codes below.
 
-    - iOS: Search for "Nexus" in the AppStore
-    - Android: The QR code below takes you to the download link:
+    .. list-table::
+        :align: center
 
-        .. image:: _images/app_android.png
-            :align: center
+        * - Android
+          - iOS
+        * - .. image:: _images/app_android.png
+                :align: center
+          - .. image:: _images/app_ios.png
+                :align: center
 
 2.  Tap on the Bluetooth icon in the upper left to open the connection menu.
 
