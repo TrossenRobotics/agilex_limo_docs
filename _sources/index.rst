@@ -24,8 +24,8 @@ What's Here
     LIMO and the Simulation Table.
 *   :doc:`demos` - The demos will help you understand some of the more advanced capabilities of the
     LIMO.
-*   :doc:`specifications/specifications` - Contains specification information for the LIMO and the
-    Simulation Table.
+*   :doc:`specifications` - Contains specification information for the LIMO and the Simulation
+    Table.
 *   :doc:`tips_and_tricks` - Small guides unrelated to the demos or the general operation of the
     robot.
 
@@ -39,7 +39,7 @@ Table of Contents:
     getting_started.rst
     operation.rst
     demos.rst
-    specifications/specifications.rst
+    specifications.rst
     tips_and_tricks.rst
 
 .. note::

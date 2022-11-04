@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>First Time Use &mdash; AgileX LIMO Documentation</title>
+  <title>Simulation Table Setup &mdash; AgileX LIMO Documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
@@ -24,8 +24,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Mobile App Setup" href="app_setup.html" />
-    <link rel="prev" title="Getting Started" href="../getting_started.html" />
+    <link rel="next" title="Operation" href="../operation.html" />
+    <link rel="prev" title="Turning Off Your LIMO" href="turn_off.html" />
    
   <!-- Google Tag Manager (noscript) TODO -->
   <!-- End Google Tag Manager (noscript) -->
@@ -50,11 +50,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../getting_started.html">Getting Started</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">First Time Use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_time_use.html">First Time Use</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app_setup.html">Mobile App Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="remote_dev.html">Setting Up Remote Development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="turn_off.html">Turning Off Your LIMO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_sim_table.html">Simulation Table Setup</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Simulation Table Setup</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../operation.html">Operation</a></li>
@@ -78,9 +78,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a></li>
           <li class="breadcrumb-item"><a href="../getting_started.html">Getting Started</a></li>
-      <li class="breadcrumb-item active">First Time Use</li>
+      <li class="breadcrumb-item active">Simulation Table Setup</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/TrossenRobotics/agilex_limo_docs/blob/main/getting_started/first_time_use.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/TrossenRobotics/agilex_limo_docs/blob/main/getting_started/setup_sim_table.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -88,89 +88,80 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="first-time-use">
-<h1>First Time Use<a class="headerlink" href="#first-time-use" title="Permalink to this headline"></a></h1>
+  <div class="section" id="simulation-table-setup">
+<h1>Simulation Table Setup<a class="headerlink" href="#simulation-table-setup" title="Permalink to this headline"></a></h1>
+<div class="section" id="build-the-bottom-plate">
+<h2>Build the Bottom Plate<a class="headerlink" href="#build-the-bottom-plate" title="Permalink to this headline"></a></h2>
+<p>Arrange the plates according to the diagrams below.</p>
+<table border="1" class="docutils align-center">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="../_images/sim_table_bottom.png" class="first last align-center" src="../_images/sim_table_bottom.png" style="width: 50%;" />
+</td>
+<td><img alt="../_images/sim_table_bottom_numbered.png" class="first last align-center" src="../_images/sim_table_bottom_numbered.png" style="width: 50%;" />
+</td>
+</tr>
+</tbody>
+</table>
+<p>The table should look like the image below when completed.</p>
+<img alt="../_images/sim_table_done.png" class="align-center" src="../_images/sim_table_done.png" style="width: 50%;" />
+</div>
+<div class="section" id="build-the-border">
+<h2>Build the Border<a class="headerlink" href="#build-the-border" title="Permalink to this headline"></a></h2>
+<p>Enclose the border around the Table and fix the border with the L and U-shaped buckles. The two
+borders in the middle of each side are patterned, the other two are not.</p>
+<table border="1" class="colwidths-given docutils align-center">
+<colgroup>
+<col width="70%" />
+<col width="30%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="../_images/sim_table_perimeter.png" class="first last align-center" src="../_images/sim_table_perimeter.png" />
+</td>
+<td><img alt="../_images/sim_table_perimeter_callout.png" class="first last align-center" src="../_images/sim_table_perimeter_callout.png" />
+</td>
+</tr>
+</tbody>
+</table>
+<p>The border should look like the image below when completed.</p>
+<img alt="../_images/sim_table_perimeter_done.png" class="align-center" src="../_images/sim_table_perimeter_done.png" style="width: 50%;" />
+</div>
+<div class="section" id="install-table-components">
+<h2>Install Table Components<a class="headerlink" href="#install-table-components" title="Permalink to this headline"></a></h2>
 <ol class="arabic simple">
-<li>Install the two antennas to the connectors on top of the LIMO.</li>
-<li>Charge the battery until the LED indicator on the charging blocks is a solid green.</li>
-<li>Open the rear door on the LIMO and connect the battery to its connector.</li>
-<li>Long press the power button on the left side of the robot to turn it on.</li>
-<li>Check the battery charge level by observing the indicator on the right side of the robot.</li>
+<li>Affix the ABCD characters at the end of each of the roads for the LIMO to identify its location
+during navigation.</li>
+<li>Place the Whiteboard behind the Table’s parking space.</li>
+<li>Place the traffic light.</li>
+<li>Affix the AR tag to the end of the Lifting Lever’s gate such that the tag will be in the middle
+of the road when it is placed.</li>
+<li>Place the Lifting Lever.</li>
 </ol>
-<table border="1" class="docutils align-center">
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Light Status</th>
-<th class="head">Meaning</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Solid Green</td>
-<td>Sufficient Battery Charge</td>
-</tr>
-<tr class="row-odd"><td>Flashing Red</td>
-<td>Low Battery Charge</td>
-</tr>
-</tbody>
-</table>
-<ol class="arabic simple" start="6">
-<li>Check the current steering mode of the robot by observing the color of the lights at the front
-by the latches.</li>
-</ol>
-<table border="1" class="docutils align-center">
-<colgroup>
-<col width="19%" />
-<col width="23%" />
-<col width="58%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Latch Status</th>
-<th class="head">Indicator Color</th>
-<th class="head">Current Steering Mode or Status</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td rowspan="2">Any</td>
-<td>Blinking Red</td>
-<td>Low Battery or Main Controller Alarm</td>
-</tr>
-<tr class="row-odd"><td>Solid Red</td>
-<td>LIMO Stopped Due to Error</td>
-</tr>
-<tr class="row-even"><td rowspan="2">Inserted</td>
-<td>Yellow</td>
-<td>Four-wheel Differential Drive or Tracked</td>
-</tr>
-<tr class="row-odd"><td>Blue</td>
-<td>Mecanum</td>
-</tr>
-<tr class="row-even"><td>Released</td>
-<td>Green</td>
-<td>Ackermann</td>
-</tr>
-</tbody>
-</table>
-<ol class="arabic" start="7">
-<li><p class="first">Open the door on the right side of the robot. You will see two USB ports on the USB hub. Plug
-in a mouse and keyboard.</p>
-<img alt="../_images/limo_side_usbhub.png" class="align-center" src="../_images/limo_side_usbhub.png" />
-</li>
-<li><p class="first">Connect your robot to your Wi-Fi using the LIMO computer’s settings menu under <strong>All Settings</strong>
-&gt; <strong>Network</strong>.</p>
-<img alt="../_images/connect_to_network.png" class="align-center" src="../_images/connect_to_network.png" />
-</li>
-</ol>
+<p>The components should look something like the image below when completed.</p>
+<img alt="../_images/sim_table_components_done.png" class="align-center" src="../_images/sim_table_components_done.png" style="width: 50%;" />
+</div>
+<div class="section" id="place-model-trees">
+<h2>Place Model Trees<a class="headerlink" href="#place-model-trees" title="Permalink to this headline"></a></h2>
+<p>The trees should look something like the image below when completed.</p>
+<img alt="../_images/sim_table_trees_done.png" class="align-center" src="../_images/sim_table_trees_done.png" style="width: 50%;" />
+</div>
+<div class="section" id="affix-table-to-it-s-working-surface">
+<h2>Affix Table to it’s Working Surface<a class="headerlink" href="#affix-table-to-it-s-working-surface" title="Permalink to this headline"></a></h2>
+<p>If the friction between the Table and the surface it’s on is small such that the motion of the LIMO
+causes the table to move, the tape in the accessories can be used to better hold the table in
+place.</p>
+</div>
 </div>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../getting_started.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="app_setup.html" class="btn btn-neutral float-right" title="Mobile App Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="turn_off.html" class="btn btn-neutral float-left" title="Turning Off Your LIMO" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../operation.html" class="btn btn-neutral float-right" title="Operation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
