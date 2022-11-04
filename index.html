@@ -6,6 +6,7 @@
   <title>AgileX LIMO &mdash; AgileX LIMO Documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="_static/tr_style.css" type="text/css" />
@@ -23,7 +24,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Specifications" href="specifications/index.html" />
+    <link rel="next" title="Getting Started" href="getting_started.html" />
    
   <!-- Google Tag Manager (noscript) TODO -->
   <!-- End Google Tag Manager (noscript) -->
@@ -46,11 +47,12 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="specifications/index.html">Specifications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="operation/index.html">Operation</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operation.html">Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="specifications/specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips_and_tricks.html">Tips and Tricks</a></li>
 </ul>
 
         </div>
@@ -85,15 +87,52 @@ modes and comes pre-installed with plenty of demos and examples. LIMO is a perfe
 robot education, research and development, and can serve as a model for industrial applications.
 With its innovative mechanical design, LIMO can quickly switch its steering mode between four-wheel
 differential, Ackermann, tracked, and Mecanum. The LIMO is equipped with an NVIDIA Jetson Nano, an
-EAI XL2 LiDAR, an ORBBEC Dabai stereo depth camera, and a suite of other sensors which can all be
+EAI XL2 LiDAR, an ORBBEC® Dabai stereo depth camera, and a suite of other sensors which can all be
 used to perform advanced robotic applications like precise autonomous positioning, SLAM, path
 planning and navigation, obstacle avoidance, traffic light recognition and so on.</p>
+<div class="section" id="what-s-here">
+<h2>What’s Here<a class="headerlink" href="#what-s-here" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="getting_started.html"><span class="doc">Getting Started</span></a> - These guides will walk you through the setup process
+for your LIMO, the remote control mobile application, and your development environments.</li>
+<li><a class="reference internal" href="operation.html"><span class="doc">Operation</span></a> - These guides will walk you through concepts related to the operation of the
+LIMO and the Simulation Table.</li>
+<li><a class="reference internal" href="demos.html"><span class="doc">Demos</span></a> - The demos will help you understand some of the more advanced capabilities of the
+LIMO.</li>
+<li><a class="reference internal" href="specifications/specifications.html"><span class="doc">Specifications</span></a> - Contains specification information for the LIMO and the
+Simulation Table.</li>
+<li><a class="reference internal" href="tips_and_tricks.html"><span class="doc">Tips and Tricks</span></a> - Small guides unrelated to the demos or the general operation of the
+robot.</li>
+</ul>
+</div>
+<div class="section" id="table-of-contents">
+<h2>Table of Contents:<a class="headerlink" href="#table-of-contents" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="specifications/index.html">Specifications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="operation/index.html">Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/first_time_use.html">First Time Use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/app_setup.html">Mobile App Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/remote_dev.html">Setting Up Remote Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/turn_off.html">Turning Off Your LIMO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="operation.html">Operation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="operation/app.html">Mobile App Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operation/steering_modes.html">Steering Modes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demos/slam_nav.html">SLAM &amp; Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/vision.html">Vision Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/voice.html">Voice Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="specifications/specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips_and_tricks.html">Tips and Tricks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tips_and_tricks/flash_nano.html">Flash the LIMO’s Jetson Nano Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips_and_tricks/upgrade_firmware.html">Upgrade LIMO Controller Firmware</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="admonition note">
@@ -102,12 +141,13 @@ planning and navigation, obstacle avoidance, traffic light recognition and so on
 is derived from there. It is distributed under the MIT License which can be found <a class="reference external" href="https://github.com/agilexrobotics/limo-doc/blob/master/LICENSE" rel="noopener noreferrer" target="_blank">here</a>.</p>
 </div>
 </div>
+</div>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="specifications/index.html" class="btn btn-neutral float-right" title="Specifications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="getting_started.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

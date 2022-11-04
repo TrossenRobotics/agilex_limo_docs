@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text Recognition &mdash; AgileX LIMO Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tr_style.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.webp"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Traffic Light Identification" href="traffic_light.html" />
+    <link rel="prev" title="Vision Modules" href="../vision.html" />
+   
+  <!-- Google Tag Manager (noscript) TODO -->
+  <!-- End Google Tag Manager (noscript) -->
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo_limo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operation.html">Operation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../demos.html">Demos</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../slam_nav.html">SLAM &amp; Navigation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vision.html">Vision Modules</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Text Recognition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="traffic_light.html">Traffic Light Identification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lifting_barrier.html">Lifting Barrier Control</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../voice.html">Voice Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../specifications/specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tips_and_tricks.html">Tips and Tricks</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AgileX LIMO Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../demos.html">Demos</a></li>
+          <li class="breadcrumb-item"><a href="../vision.html">Vision Modules</a></li>
+      <li class="breadcrumb-item active">Text Recognition</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/TrossenRobotics/agilex_limo_docs/blob/main/demos/vision/text.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="text-recognition">
+<h1>Text Recognition<a class="headerlink" href="#text-recognition" title="Permalink to this headline"></a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#overview" id="id1">Overview</a></li>
+<li><a class="reference internal" href="#structure" id="id2">Structure</a></li>
+<li><a class="reference internal" href="#usage" id="id3">Usage</a></li>
+</ul>
+</div>
+<div class="section" id="overview">
+<h2><a class="toc-backref" href="#id1">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<p>This text recognition demonstration does the following to get a string representation of text seen
+through the onboard camera:</p>
+<ol class="arabic simple">
+<li>Obtain an RBG image from the camera</li>
+<li>Perform <a class="reference external" href="https://en.wikipedia.org/wiki/Grayscale" rel="noopener noreferrer" target="_blank">grayscale</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Thresholding_(image_processing)" rel="noopener noreferrer" target="_blank">binarization threshold</a> processing on the image</li>
+<li>Use the <a class="reference external" href="https://github.com/madmaze/pytesseract" rel="noopener noreferrer" target="_blank">pytesseract</a> text recognition library to recognize the English letters or numbers of
+the image</li>
+<li>Publish the recognized result to the <code class="docutils literal notranslate"><span class="pre">/detect_word_reslut</span></code> topic</li>
+</ol>
+</div>
+<div class="section" id="structure">
+<h2><a class="toc-backref" href="#id2">Structure</a><a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
+digraph Text_Recognition_Pipeline {
+
+    rankdir=&quot;LR&quot;;
+    &quot;camera&quot; -&gt; &quot;/rgb_image&quot; -&gt; &quot;detect_node&quot; -&gt; &quot;/detect_word_reslut&quot;;
+
+    &quot;camera&quot; [shape=ellipse];
+    &quot;/rgb_image&quot; [shape=polygon,sides=4];
+    &quot;detect_node&quot; [shape=ellipse]
+    &quot;/detect_word_reslut&quot; [shape=polygon,sides=4];
+
+}</div>
+<div class="section" id="usage">
+<h2><a class="toc-backref" href="#id3">Usage</a><a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Before running this demo, please make sure that all other programs have been terminated using
+<kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">C</kbd>.</p>
+</div>
+<p>Start up ROS:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ roscore
+</pre></div>
+</div>
+<p>Start the text recognition node from the vision package by entering the command in the terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rosrun vision detect_node.py
+</pre></div>
+</div>
+<p>The output of the text recognition program is published to the topic <code class="docutils literal notranslate"><span class="pre">/detect_word_reslut</span></code>. To
+inspect the output, enter the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rostopic echo /detect_word_reslut
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../vision.html" class="btn btn-neutral float-left" title="Vision Modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="traffic_light.html" class="btn btn-neutral float-right" title="Traffic Light Identification" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <!-- Socials -->
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

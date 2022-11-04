@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapping using GMapping &mdash; AgileX LIMO Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tr_style.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.webp"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Mapping using Cartographer" href="cartographer.html" />
+    <link rel="prev" title="SLAM &amp; Navigation" href="../slam_nav.html" />
+   
+  <!-- Google Tag Manager (noscript) TODO -->
+  <!-- End Google Tag Manager (noscript) -->
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo_limo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operation.html">Operation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../demos.html">Demos</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../slam_nav.html">SLAM &amp; Navigation</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Mapping using GMapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cartographer.html">Mapping using Cartographer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="move_base.html">Navigation using the move_base and amcl packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rtabmap.html">Mapping &amp; Navigation using RTAB-Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="path_following.html">Path Following</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vision.html">Vision Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../voice.html">Voice Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../specifications/specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tips_and_tricks.html">Tips and Tricks</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AgileX LIMO Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../demos.html">Demos</a></li>
+          <li class="breadcrumb-item"><a href="../slam_nav.html">SLAM &amp; Navigation</a></li>
+      <li class="breadcrumb-item active">Mapping using GMapping</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/TrossenRobotics/agilex_limo_docs/blob/main/demos/slam_nav/gmapping.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="mapping-using-gmapping">
+<h1>Mapping using GMapping<a class="headerlink" href="#mapping-using-gmapping" title="Permalink to this headline"></a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#overview" id="id1">Overview</a></li>
+<li><a class="reference internal" href="#structure" id="id2">Structure</a></li>
+<li><a class="reference internal" href="#usage" id="id3">Usage</a><ul>
+<li><a class="reference internal" href="#mapping" id="id4">Mapping</a></li>
+<li><a class="reference internal" href="#saving-the-map" id="id5">Saving the Map</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuration" id="id6">Configuration</a></li>
+</ul>
+</div>
+<div class="section" id="overview">
+<h2><a class="toc-backref" href="#id1">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<p>GMapping is a commonly used open source SLAM algorithm based on the filtering SLAM framework.
+GMapping effectively utilizes the wheel odometry information and does not require high frequency of
+laser LiDAR. When mapping small environments, little processing power is required is low and the
+accuracy is high.</p>
+<p>You can find more information on the <a class="reference external" href="https://github.com/OpenSLAM-org/openslam_gmapping" rel="noopener noreferrer" target="_blank">openslam_gmapping</a> and <a class="reference external" href="https://github.com/ros-perception/slam_gmapping" rel="noopener noreferrer" target="_blank">slam_gmapping</a> GitHub repositories.</p>
+</div>
+<div class="section" id="structure">
+<h2><a class="toc-backref" href="#id2">Structure</a><a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="usage">
+<h2><a class="toc-backref" href="#id3">Usage</a><a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Use <kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">C</kbd> command to end all the processes before running the below commands.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Mapping works best when the LIMO drives slowly through its environment. If it moves around too
+quickly, mapping quality will be affected.</p>
+</div>
+<div class="section" id="mapping">
+<h3><a class="toc-backref" href="#id4">Mapping</a><a class="headerlink" href="#mapping" title="Permalink to this headline"></a></h3>
+<ol class="arabic">
+<li><p class="first">Start the LIMO. Open a new terminal, and enter the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ roslaunch limo_bringup limo_start.launch pub_odom_tf:=false
+</pre></div>
+</div>
+</li>
+<li><p class="first">Launch the GMapping processes. In a new terminal, and enter the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ roslaunch limo_bringup limo_gmapping.launch
+</pre></div>
+</div>
+<p>After launching successfully, RViz will be opened and display something like the image below.</p>
+<img alt="../../_images/gmapping.png" class="align-center" src="../../_images/gmapping.png" style="width: 80%;" />
+</li>
+<li><p class="first">Use the mobile app to explore and map out the environment.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="saving-the-map">
+<h3><a class="toc-backref" href="#id5">Saving the Map</a><a class="headerlink" href="#saving-the-map" title="Permalink to this headline"></a></h3>
+<p>When finished mapping, do the following to save the map to the specified directory:</p>
+<ol class="arabic">
+<li><p class="first">Switch to the directory where you need to save the map. For example, if you want to save the map to
+<code class="docutils literal notranslate"><span class="pre">~/agilex_ws/src/limo_ros/limo_bringup/maps/</span></code>, enter the command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd ~/agilex_ws/src/limo_ros/limo_bringup/maps/</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">After switching to <code class="docutils literal notranslate"><span class="pre">~/agilex_ws/limo_bringup/maps</span></code>, enter the command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">rosrun map_server map_saver -f map1</span>
+</pre></div>
+</div>
+<p>This calls the map_saver script from the map_server package to save the map to a file in the
+current directory, in this case <code class="docutils literal notranslate"><span class="pre">map1</span></code> in <code class="docutils literal notranslate"><span class="pre">~/agilex_ws/limo_bringup/maps</span></code>.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Use different names for different maps, else you risk overwriting existing map files.</p>
+</div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2><a class="toc-backref" href="#id6">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h2>
+<p>The GMapping package can be configured using the launch file at
+<code class="docutils literal notranslate"><span class="pre">~/agilex_ws/src/limo_ros/limo_bringup/launch/limo_gmapping.launch</span></code></p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="15%" />
+<col width="6%" />
+<col width="7%" />
+<col width="72%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Parameter</strong></th>
+<th class="head"><strong>Type</strong></th>
+<th class="head"><strong>Default</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>~throttle_scans</td>
+<td>int</td>
+<td>1</td>
+<td>The scan data threshold to be processed; the default is to process 1 scan data at a time (it can be set larger to skip some scan data)</td>
+</tr>
+<tr class="row-odd"><td>~base_frame</td>
+<td>string</td>
+<td>base_link</td>
+<td>Robot base coordinate system</td>
+</tr>
+<tr class="row-even"><td>~map_frame</td>
+<td>string</td>
+<td>map</td>
+<td>Map coordinate system</td>
+</tr>
+<tr class="row-odd"><td>~odom_frame</td>
+<td>string</td>
+<td>odom</td>
+<td>Odometer coordinate system</td>
+</tr>
+<tr class="row-even"><td>~map_update_interval</td>
+<td>float</td>
+<td>5.0</td>
+<td>Map update frequency</td>
+</tr>
+<tr class="row-odd"><td>~maxUrange</td>
+<td>float</td>
+<td>80</td>
+<td>Detect the maximum available range, that is, the range that the beam can reach</td>
+</tr>
+<tr class="row-even"><td>~sigma</td>
+<td>float</td>
+<td>0.05</td>
+<td>Standard deviation of endpoint matching</td>
+</tr>
+<tr class="row-odd"><td>~kernelSize</td>
+<td>int</td>
+<td>1</td>
+<td>Used to find the corresponding kernel size</td>
+</tr>
+<tr class="row-even"><td>~lstep</td>
+<td>float</td>
+<td>0.05</td>
+<td>Translation optimization step</td>
+</tr>
+<tr class="row-odd"><td>~astep</td>
+<td>float</td>
+<td>0.05</td>
+<td>Rotation optimization step</td>
+</tr>
+<tr class="row-even"><td>~iterations</td>
+<td>int</td>
+<td>5</td>
+<td>Scan matching iterations</td>
+</tr>
+<tr class="row-odd"><td>~lsigma</td>
+<td>float</td>
+<td>0.075</td>
+<td>Laser standard deviation for likelihood calculation</td>
+</tr>
+<tr class="row-even"><td>~ogain</td>
+<td>float</td>
+<td>3.0</td>
+<td>Used for smooth resampling effect during likelihood calculation</td>
+</tr>
+<tr class="row-odd"><td>~lskip</td>
+<td>int</td>
+<td>0</td>
+<td>The number of beams skipped in each scan.</td>
+</tr>
+<tr class="row-even"><td>~minimumScore</td>
+<td>float</td>
+<td>0.0</td>
+<td>The lowest value of the scan matching result</td>
+</tr>
+<tr class="row-odd"><td>~srr</td>
+<td>float</td>
+<td>0.1</td>
+<td>The mileage error during translation as a translation function (rho/rho)</td>
+</tr>
+<tr class="row-even"><td>~srt</td>
+<td>float</td>
+<td>0.2</td>
+<td>The mileage error during translation as a rotation function (rho/theta)</td>
+</tr>
+<tr class="row-odd"><td>~str</td>
+<td>float</td>
+<td>0.1</td>
+<td>The mileage error during rotation as a translation function(theta/rho)</td>
+</tr>
+<tr class="row-even"><td>~stt</td>
+<td>float</td>
+<td>0.2</td>
+<td>The mileage error during rotation as a rotation function (theta/theta)</td>
+</tr>
+<tr class="row-odd"><td>~linearUpdate</td>
+<td>float</td>
+<td>1.0</td>
+<td>The robot translates a certain distance and processes the laser data once</td>
+</tr>
+<tr class="row-even"><td>~angularUpdate</td>
+<td>float</td>
+<td>0.5</td>
+<td>The robot rotates a certain distance and processes the laser data once</td>
+</tr>
+<tr class="row-odd"><td>~temporalUpdate</td>
+<td>float</td>
+<td>-1.0</td>
+<td>If the latest scan processing is slower than the update, one scan is processed. Turn off time-based updates when the value is negative.</td>
+</tr>
+<tr class="row-even"><td>~resampleThreshold</td>
+<td>float</td>
+<td>0.5</td>
+<td>Resampling threshold based on Neff</td>
+</tr>
+<tr class="row-odd"><td>~particles</td>
+<td>int</td>
+<td>30</td>
+<td>Number of particles in the filter</td>
+</tr>
+<tr class="row-even"><td>~xmin</td>
+<td>float</td>
+<td>-100.0</td>
+<td>The initial minimum size of the map in the x direction</td>
+</tr>
+<tr class="row-odd"><td>~ymin</td>
+<td>float</td>
+<td>-100.0</td>
+<td>The initial minimum size of the map in the y direction</td>
+</tr>
+<tr class="row-even"><td>~xmax</td>
+<td>float</td>
+<td>100.0</td>
+<td>The initial maximum size of the map in the x direction</td>
+</tr>
+<tr class="row-odd"><td>~ymax</td>
+<td>float</td>
+<td>100.0</td>
+<td>The initial maximum size of the map in the y direction</td>
+</tr>
+<tr class="row-even"><td>~delta</td>
+<td>float</td>
+<td>0.05</td>
+<td>Map resolution</td>
+</tr>
+<tr class="row-odd"><td>~llsamplerange</td>
+<td>float</td>
+<td>0.01</td>
+<td>The translation sampling distance of likelihood calculation</td>
+</tr>
+<tr class="row-even"><td>~llsamplestep</td>
+<td>float</td>
+<td>0.01</td>
+<td>The translation sampling step of likelihood calculation</td>
+</tr>
+<tr class="row-odd"><td>~lasamplerange</td>
+<td>float</td>
+<td>0.005</td>
+<td>The angle sampling distance of likelihood calculation</td>
+</tr>
+<tr class="row-even"><td>~lasamplestep</td>
+<td>float</td>
+<td>0.005</td>
+<td>The angle sampling step of likelihood calculation</td>
+</tr>
+<tr class="row-odd"><td>~transform_publish_period</td>
+<td>float</td>
+<td>0.05</td>
+<td>TF transform publishing period</td>
+</tr>
+<tr class="row-even"><td>~occ_thresh</td>
+<td>float</td>
+<td>0.25</td>
+<td>The threshold of raster map occupancy rate</td>
+</tr>
+<tr class="row-odd"><td>~maxRange</td>
+<td>float</td>
+<td>——</td>
+<td>The maximum range of sensor</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../slam_nav.html" class="btn btn-neutral float-left" title="SLAM &amp; Navigation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cartographer.html" class="btn btn-neutral float-right" title="Mapping using Cartographer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <!-- Socials -->
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

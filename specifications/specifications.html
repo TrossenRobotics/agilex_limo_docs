@@ -6,6 +6,7 @@
   <title>Specifications &mdash; AgileX LIMO Documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
@@ -23,8 +24,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Getting Started" href="../getting_started/index.html" />
-    <link rel="prev" title="AgileX LIMO" href="../index.html" />
+    <link rel="next" title="Tips and Tricks" href="../tips_and_tricks.html" />
+    <link rel="prev" title="Voice Commands" href="../demos/voice/voice_commands.html" />
    
   <!-- Google Tag Manager (noscript) TODO -->
   <!-- End Google Tag Manager (noscript) -->
@@ -47,11 +48,12 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operation.html">Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demos.html">Demos</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Specifications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../operation/index.html">Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips_and_tricks.html">Tips and Tricks</a></li>
 </ul>
 
         </div>
@@ -70,7 +72,7 @@
       <li><a href="../index.html" class="icon icon-home"></a></li>
       <li class="breadcrumb-item active">Specifications</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/TrossenRobotics/agilex_limo_docs/blob/main/specifications/index.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/TrossenRobotics/agilex_limo_docs/blob/main/specifications/specifications.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -80,6 +82,21 @@
              
   <div class="section" id="specifications">
 <h1>Specifications<a class="headerlink" href="#specifications" title="Permalink to this headline"></a></h1>
+<div class="section" id="limo-contents">
+<h2>LIMO Contents<a class="headerlink" href="#limo-contents" title="Permalink to this headline"></a></h2>
+<p>Your LIMO should come with the following:</p>
+<ul class="simple">
+<li>1x LIMO Robot</li>
+<li>1x Battery</li>
+<li>1x Charger</li>
+<li>4x Mecanum Wheels</li>
+<li>2x Tracks</li>
+<li>2x Wi-Fi/Bluetooth Antennas</li>
+<li>1x Allen Wrench</li>
+<li>3x M3x12mm Screws</li>
+<li>20x M3x5mm Screws</li>
+</ul>
+</div>
 <div class="section" id="specifications-overview">
 <h2>Specifications Overview<a class="headerlink" href="#specifications-overview" title="Permalink to this headline"></a></h2>
 <table border="1" class="docutils align-center">
@@ -126,17 +143,180 @@
 </div>
 <div class="section" id="sensors-onboard-devices">
 <h2>Sensors &amp; Onboard Devices<a class="headerlink" href="#sensors-onboard-devices" title="Permalink to this headline"></a></h2>
-<ul class="simple">
-<li>IMU MPU6050</li>
-<li>EAI X2L LiDAR</li>
-<li>ORBBEC DaBai Stereo Depth Camera</li>
-<li>NVIDIA Jetson Nano 4G</li>
-<li>iFLYTEK Voice Assistant</li>
-<li>Dual Channel Speakers (2x2W)</li>
-<li>USB Hub</li>
-<li>Front Display</li>
-<li>Rear Display</li>
-</ul>
+<div class="section" id="imu-mpu6050">
+<h3>IMU MPU6050<a class="headerlink" href="#imu-mpu6050" title="Permalink to this headline"></a></h3>
+</div>
+<div class="section" id="eai-x2l-lidar">
+<span id="specifications-ydlidar-label"></span><h3>EAI X2L LiDAR<a class="headerlink" href="#eai-x2l-lidar" title="Permalink to this headline"></a></h3>
+<p>The YDLIDAR X2L LiDAR is a 360 degree two-dimensional ranging product developed by Shenzhen EAI
+Technology Co., Ltd. (EAI). This product is based on the principle of trigonometric ranging and is
+equipped with related optical, electrical, and algorithm design to achieve high-frequency and
+high-precision distance measurement. While measuring distance, the mechanical structure rotates 360
+degrees and continuously obtains angle information, thereby achieving 360 degrees scanning distance
+measurement, and output point cloud data of the scanning environment.</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="14%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="5%" />
+<col width="53%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Items</strong></th>
+<th class="head">Minimum</th>
+<th class="head">Default</th>
+<th class="head">Maximum</th>
+<th class="head">Unit</th>
+<th class="head">Remarks</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Ranging frequency</td>
+<td>/</td>
+<td>3000</td>
+<td>/</td>
+<td>Hz</td>
+<td>3000 ranging times per second</td>
+</tr>
+<tr class="row-odd"><td>Scanning frequency</td>
+<td>5</td>
+<td>6</td>
+<td>8</td>
+<td>Hz</td>
+<td>PWM signal needs to be connected, and the recommended frequency is 6Hz.</td>
+</tr>
+<tr class="row-even"><td>Ranging range</td>
+<td>0.12</td>
+<td>/</td>
+<td>8</td>
+<td>m</td>
+<td>Indoor environment, and objects with 80% reflectivity</td>
+</tr>
+<tr class="row-odd"><td>Scanning angle</td>
+<td>/</td>
+<td>0-360</td>
+<td>/</td>
+<td>°</td>
+<td>/</td>
+</tr>
+<tr class="row-even"><td>Absolute tolerance</td>
+<td>/</td>
+<td>2</td>
+<td>/</td>
+<td>cm</td>
+<td>When ranging ≤1m</td>
+</tr>
+<tr class="row-odd"><td>Relative tolerance</td>
+<td>/</td>
+<td>3.5%</td>
+<td>/</td>
+<td>/</td>
+<td>When 1m &lt; ranging ≤ 6m</td>
+</tr>
+<tr class="row-even"><td>Pitch angle</td>
+<td>0.25</td>
+<td>1</td>
+<td>1.75</td>
+<td>°</td>
+<td>/</td>
+</tr>
+<tr class="row-odd"><td>Angle resolution</td>
+<td>0.60 (5Hz)</td>
+<td>0.72 (6Hz)</td>
+<td>0.96 (8Hz)</td>
+<td>°</td>
+<td>Different scanning frequency</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="orbbec-dabai-stereo-depth-camera">
+<h3>ORBBEC® DaBai Stereo Depth Camera<a class="headerlink" href="#orbbec-dabai-stereo-depth-camera" title="Permalink to this headline"></a></h3>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Parameter name</strong></th>
+<th class="head"><strong>Parameter index</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>The distance between the imaging centers of the left and right infrared cameras</td>
+<td>40mm</td>
+</tr>
+<tr class="row-odd"><td>Depth distance</td>
+<td>0.3-3m</td>
+</tr>
+<tr class="row-even"><td>Power consumption</td>
+<td>The average power consumption of the whole machine is &lt;2W;The peak value at the moment the laser is turned on &lt;5W (duration: 3ms);Typical standby power consumption is &lt;0.7W.</td>
+</tr>
+<tr class="row-odd"><td>Depth map resolution</td>
+<td>640x400 &#64; 30FPS; 320x200 &#64; 30FPS</td>
+</tr>
+<tr class="row-even"><td>Color map resolution</td>
+<td>1920x1080 &#64; 30FPS; 1280x720 &#64; 30FPS; 640x480 &#64; 30FPS</td>
+</tr>
+<tr class="row-odd"><td>Accuracy</td>
+<td>6mm &#64; 1m (81% FOV area participates in accuracy calculation*)</td>
+</tr>
+<tr class="row-even"><td>Depth FOV</td>
+<td>H 67.9° V 45.3°</td>
+</tr>
+<tr class="row-odd"><td>Color FOV</td>
+<td>H 71° V43.7° &#64;1920X1080</td>
+</tr>
+<tr class="row-even"><td>Delay</td>
+<td>30-45ms</td>
+</tr>
+<tr class="row-odd"><td>Data transmission</td>
+<td>USB2.0 or above</td>
+</tr>
+<tr class="row-even"><td>Supported operating system</td>
+<td>Android / Linux / Windows7/10</td>
+</tr>
+<tr class="row-odd"><td>Power supply mode</td>
+<td>USB</td>
+</tr>
+<tr class="row-even"><td>Operating temperature</td>
+<td>10°C ~ 40°C</td>
+</tr>
+<tr class="row-odd"><td>Applicable scene</td>
+<td>Indoor / outdoor (specifically subject to application scenes and related algorithm requirements)</td>
+</tr>
+<tr class="row-even"><td>Dustproof and waterproof</td>
+<td>Foundation dustproof</td>
+</tr>
+<tr class="row-odd"><td>Safety</td>
+<td>Class 1 laser</td>
+</tr>
+<tr class="row-even"><td>Dimensions (mm)</td>
+<td>Length 59.6 X width 17.4 X thickness 11.1mm</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="nvidia-jetson-nano-4g">
+<h3>NVIDIA Jetson Nano 4G<a class="headerlink" href="#nvidia-jetson-nano-4g" title="Permalink to this headline"></a></h3>
+</div>
+<div class="section" id="iflytek-voice-assistant">
+<h3>iFLYTEK Voice Assistant<a class="headerlink" href="#iflytek-voice-assistant" title="Permalink to this headline"></a></h3>
+</div>
+<div class="section" id="dual-channel-speakers-2x2w">
+<h3>Dual Channel Speakers (2x2W)<a class="headerlink" href="#dual-channel-speakers-2x2w" title="Permalink to this headline"></a></h3>
+</div>
+<div class="section" id="usb-hub">
+<h3>USB Hub<a class="headerlink" href="#usb-hub" title="Permalink to this headline"></a></h3>
+</div>
+<div class="section" id="front-display">
+<h3>Front Display<a class="headerlink" href="#front-display" title="Permalink to this headline"></a></h3>
+</div>
+<div class="section" id="rear-display">
+<h3>Rear Display<a class="headerlink" href="#rear-display" title="Permalink to this headline"></a></h3>
+</div>
 </div>
 <div class="section" id="limo-component-overview">
 <h2>LIMO Component Overview<a class="headerlink" href="#limo-component-overview" title="Permalink to this headline"></a></h2>
@@ -150,7 +330,7 @@
 </td>
 <td><ol class="first last arabic simple">
 <li>Wi-Fi/Bluetooth Antennas</li>
-<li>ORBBEC Dabai Stereo Depth Camera</li>
+<li>ORBBEC® Dabai Stereo Depth Camera</li>
 <li>Front Display</li>
 <li>EAI X2L LiDAR</li>
 <li>Hub Motor</li>
@@ -204,8 +384,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../index.html" class="btn btn-neutral float-left" title="AgileX LIMO" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../getting_started/index.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../demos/voice/voice_commands.html" class="btn btn-neutral float-left" title="Voice Commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../tips_and_tricks.html" class="btn btn-neutral float-right" title="Tips and Tricks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

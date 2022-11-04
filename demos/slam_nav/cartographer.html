@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapping using Cartographer &mdash; AgileX LIMO Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tr_style.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.webp"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Navigation using the move_base and amcl packages" href="move_base.html" />
+    <link rel="prev" title="Mapping using GMapping" href="gmapping.html" />
+   
+  <!-- Google Tag Manager (noscript) TODO -->
+  <!-- End Google Tag Manager (noscript) -->
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo_limo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operation.html">Operation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../demos.html">Demos</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../slam_nav.html">SLAM &amp; Navigation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="gmapping.html">Mapping using GMapping</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Mapping using Cartographer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="move_base.html">Navigation using the move_base and amcl packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rtabmap.html">Mapping &amp; Navigation using RTAB-Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="path_following.html">Path Following</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vision.html">Vision Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../voice.html">Voice Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../specifications/specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tips_and_tricks.html">Tips and Tricks</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AgileX LIMO Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../demos.html">Demos</a></li>
+          <li class="breadcrumb-item"><a href="../slam_nav.html">SLAM &amp; Navigation</a></li>
+      <li class="breadcrumb-item active">Mapping using Cartographer</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/TrossenRobotics/agilex_limo_docs/blob/main/demos/slam_nav/cartographer.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="mapping-using-cartographer">
+<h1>Mapping using Cartographer<a class="headerlink" href="#mapping-using-cartographer" title="Permalink to this headline"></a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#overview" id="id1">Overview</a></li>
+<li><a class="reference internal" href="#structure" id="id2">Structure</a></li>
+<li><a class="reference internal" href="#usage" id="id3">Usage</a><ul>
+<li><a class="reference internal" href="#mapping" id="id4">Mapping</a></li>
+<li><a class="reference internal" href="#saving-the-map" id="id5">Saving the Map</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuration" id="id6">Configuration</a></li>
+</ul>
+</div>
+<div class="section" id="overview">
+<h2><a class="toc-backref" href="#id1">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<p>Cartographer is a set of SLAM algorithms based on image optimization launched by Google. The main
+goal of this algorithm is to achieve low computing resource consumption while simultaneously
+mapping and localizing in real-time. The algorithm is divided into two parts. The first part is
+called Local SLAM. This part establishes and maintains a series of submaps through a laser scan
+frame, and the so-called submap is a series of Grid Maps. The second part of the algorithm, called
+Global SLAM, is to perform closed-loop detection through Loop Closure to eliminate accumulated
+errors: when a submap is built, no new laser scans will be inserted into the submap. The algorithm
+will add the submap to the closed-loop detection.</p>
+<p>You can find more information on the <a class="reference external" href="https://github.com/cartographer-project/cartographer" rel="noopener noreferrer" target="_blank">cartographer</a> and <a class="reference external" href="https://github.com/cartographer-project/cartographer_ros" rel="noopener noreferrer" target="_blank">cartographer_ros</a> GitHub repositories.</p>
+</div>
+<div class="section" id="structure">
+<h2><a class="toc-backref" href="#id2">Structure</a><a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="usage">
+<h2><a class="toc-backref" href="#id3">Usage</a><a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Use <kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">C</kbd> command to end all the processes before running the below commands.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Mapping works best when the LIMO drives slowly through its environment. If it moves around too
+quickly, mapping quality will be affected.</p>
+</div>
+<div class="section" id="mapping">
+<h3><a class="toc-backref" href="#id4">Mapping</a><a class="headerlink" href="#mapping" title="Permalink to this headline"></a></h3>
+<ol class="arabic">
+<li><p class="first">Start the LIMO. Open a new terminal, and enter the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ roslaunch limo_bringup limo_start.launch pub_odom_tf:=false
+</pre></div>
+</div>
+</li>
+<li><p class="first">Launch the Cartographer processes. In a new terminal, enter the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ roslaunch limo_bringup limo_cartographer.launch
+</pre></div>
+</div>
+<p>After launching successfully, RViz will be opened and display something like the image below.</p>
+<img alt="../../_images/cartographer_1.png" class="align-center" src="../../_images/cartographer_1.png" style="width: 80%;" />
+</li>
+<li><p class="first">Use the mobile app to explore and map out the environment.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="saving-the-map">
+<h3><a class="toc-backref" href="#id5">Saving the Map</a><a class="headerlink" href="#saving-the-map" title="Permalink to this headline"></a></h3>
+<p>After building the map, it must be saved. Do the following to save the map to the specified
+directory and file:</p>
+<ol class="arabic">
+<li><p class="first">Call the <code class="docutils literal notranslate"><span class="pre">/finish_trajectory</span></code> service to notify Cartographer that no further data should be
+accepted:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rosservice call /finish_trajectory 0
+</pre></div>
+</div>
+</li>
+<li><p class="first">Serialize the map and save its current state by calling the <code class="docutils literal notranslate"><span class="pre">/write_state</span></code> service:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rosservice call /write_state &quot;{filename: &#39;~/agilex_ws/src/limo_ros/limo_bringup/maps/mymap.pbstream&#39;}&quot;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Convert pbstream to pgm and yaml using the <code class="docutils literal notranslate"><span class="pre">cartographer_pbstream_to_ros_map</span></code> script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rosrun cartographer_ros cartographer_pbstream_to_ros_map -map_filestem=~/agilex_ws/src/limo_ros/limo_bringup/maps/mymap.pbstream -pbstream_filename=~/agilex_ws/src/limo_ros/limo_bringup/maps/mymap.pbstream -resolution=0.05
+</pre></div>
+</div>
+<p>This command generates the corresponding pgm and yaml and saves them to the directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">~/</span><span class="n">agilex_ws</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">limo_ros</span><span class="o">/</span><span class="n">limo_bringup</span><span class="o">/</span><span class="n">maps</span><span class="o">/</span><span class="n">mymap</span><span class="o">.</span><span class="n">pbstream</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">cartographer_pbstream_to_ros_map</span></code> script takes the following arguments:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li><strong>-map_filestem</strong>: (string) Stem of the output files.</li>
+<li><strong>-pbstream_filename</strong>: (string) Filename of a pbstream to draw a map from.</li>
+<li><strong>-resolution</strong>: (double): Resolution of a grid cell in the drawn map.</li>
+</ul>
+</div></blockquote>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>During the process of mapping, some warnings may appear in the terminal. This is caused by
+excessive speed and delayed data processing. It can safely be ignored.</p>
+<img alt="../../_images/cartographer_2.png" class="last align-center" src="../../_images/cartographer_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2><a class="toc-backref" href="#id6">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h2>
+<p>The Cartographer package can be configured using the launch file at
+<code class="docutils literal notranslate"><span class="pre">~/agilex_ws/src/limo_ros/limo_bringup/launch/limo_cartographer.launch</span></code></p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="9%" />
+<col width="5%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Parameter</strong></th>
+<th class="head"><strong>Default</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>map_frame</td>
+<td>map</td>
+<td>The ID of the ROS coordinate system used to publish submaps, the parent coordinate system of the pose, usually “map”.</td>
+</tr>
+<tr class="row-odd"><td>tracking_frame</td>
+<td>base_footprint</td>
+<td>The ID of the ROS coordinate system tracked by the SLAM algorithm. If IMU is used, its coordinate system should be used, usually “imu_link”.</td>
+</tr>
+<tr class="row-even"><td>published_frame</td>
+<td>odom</td>
+<td>The ID of the ROS coordinate system used to publish the pose sub-coordinate system, like the “odom” coordinate system. If an “odom” coordinate system is provided by different parts of the system, in this case, the “odom” pose in the map_frame will be published. Otherwise, it may be appropriate to set it to “base_link”.</td>
+</tr>
+<tr class="row-odd"><td>odom_frame</td>
+<td>odom</td>
+<td>It is enabled when provide_odom_frame is true. The coordinate system is used to publish local SLAM results between published_frame and map_frame, usually “odom”.</td>
+</tr>
+<tr class="row-even"><td>provide_odom_frame</td>
+<td>true</td>
+<td>If enabled, local, non-closed-loop, and continuous poses will be published as odom_frame in map_frame.</td>
+</tr>
+<tr class="row-odd"><td>use_odometry</td>
+<td>false</td>
+<td>If enabled, subscribe to nav_msgs/Odometry messages on the “odom” topic. The mileage information will be provided, which is included in SLAM.</td>
+</tr>
+<tr class="row-even"><td>num_laser_scans</td>
+<td>1</td>
+<td>The number of laser scanning topics subscribed. Subscribe to sensor_msgs/LaserScan on the “scan” topic of one laser scanner or subscribe to the topics “scan_1”, “scan_2”, etc. on multiple laser scanners.</td>
+</tr>
+<tr class="row-odd"><td>num_multi_echo_laser_scans</td>
+<td>0</td>
+<td>The number of subscribed multi-echo laser scanning topics. Subscribe to sensor_msgs/MultiEchoLaserScan on the “echoes” topic of a laser scanner or subscribe to the topics “echoes_1”, “echoes_2”, etc. for multiple laser scanners.</td>
+</tr>
+<tr class="row-even"><td>num_subdivisions_per_laser_scan</td>
+<td>1</td>
+<td>The number of point clouds that divide each received (multi-echo) laser scan. The subdivision scan can cancel the scan acquired by the scan when the scanner is moving. There is a corresponding trajectory builder option to accumulate subdivision scans into the point cloud that will be used for scan matching.</td>
+</tr>
+<tr class="row-odd"><td>num_point_clouds</td>
+<td>0</td>
+<td>The number of point cloud topics to be subscribed to. Subscribe to sensor_msgs/PointCloud2 on the “points2” topic of a range finder or subscribe topics “points2_1”, “points2_2”, etc. for multiple range finders.</td>
+</tr>
+<tr class="row-even"><td>lookup_transform_timeout_sec</td>
+<td>0.2</td>
+<td>The timeout seconds of looking up and transforming with tf2.</td>
+</tr>
+<tr class="row-odd"><td>submap_publish_period_sec</td>
+<td>0.3</td>
+<td>The period (in seconds) for publishing submaps, eg.0.3 seconds.</td>
+</tr>
+<tr class="row-even"><td>pose_publish_period_sec</td>
+<td>5e-3</td>
+<td>The period (in seconds) for publishing poses, eg. 5e-3, with a frequency of 200 Hz.</td>
+</tr>
+<tr class="row-odd"><td>trajectory_publish_period_sec</td>
+<td>30e-3</td>
+<td>The period for publishing trajectory tag in seconds, eg. 30e-3, lasting 30 milliseconds.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="gmapping.html" class="btn btn-neutral float-left" title="Mapping using GMapping" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="move_base.html" class="btn btn-neutral float-right" title="Navigation using the move_base and amcl packages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <!-- Socials -->
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

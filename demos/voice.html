@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Operation &mdash; AgileX LIMO Documentation</title>
+  <title>Voice Modules &mdash; AgileX LIMO Documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
@@ -23,8 +24,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Mobile App Usage" href="app.html" />
-    <link rel="prev" title="Getting Started" href="../getting_started/index.html" />
+    <link rel="next" title="Speech To Text" href="voice/speech_to_text.html" />
+    <link rel="prev" title="Lifting Barrier Control" href="vision/lifting_barrier.html" />
    
   <!-- Google Tag Manager (noscript) TODO -->
   <!-- End Google Tag Manager (noscript) -->
@@ -47,15 +48,21 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../specifications/index.html">Specifications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Operation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="app.html">Mobile App Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="steering_modes.html">Steering Modes</a></li>
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operation.html">Operation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../demos.html">Demos</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="slam_nav.html">SLAM &amp; Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vision.html">Vision Modules</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Voice Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="voice/speech_to_text.html">Speech To Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="voice/voice_commands.html">Voice Commands</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../specifications/specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips_and_tricks.html">Tips and Tricks</a></li>
 </ul>
 
         </div>
@@ -72,9 +79,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Operation</li>
+          <li class="breadcrumb-item"><a href="../demos.html">Demos</a></li>
+      <li class="breadcrumb-item active">Voice Modules</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/TrossenRobotics/agilex_limo_docs/blob/main/operation/index.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/TrossenRobotics/agilex_limo_docs/blob/main/demos/voice.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -82,26 +90,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="operation">
-<h1>Operation<a class="headerlink" href="#operation" title="Permalink to this headline"></a></h1>
+  <div class="section" id="voice-modules">
+<h1>Voice Modules<a class="headerlink" href="#voice-modules" title="Permalink to this headline"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="app.html">Mobile App Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="app.html#home-screen">Home Screen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="app.html#settings-menu">Settings Menu</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="steering_modes.html">Steering Modes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="steering_modes.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="steering_modes.html#switching-steering-modes">Switching Steering Modes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="steering_modes.html#switching-to-ackermann">Switching to Ackermann</a></li>
-<li class="toctree-l3"><a class="reference internal" href="steering_modes.html#switching-to-differential">Switching to Differential</a></li>
-<li class="toctree-l3"><a class="reference internal" href="steering_modes.html#switching-to-tracked">Switching to Tracked</a></li>
-<li class="toctree-l3"><a class="reference internal" href="steering_modes.html#switching-to-mecanum">Switching to Mecanum</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="voice/speech_to_text.html">Speech To Text</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice/voice_commands.html">Voice Commands</a></li>
 </ul>
 </div>
 </div>
@@ -110,8 +104,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../getting_started/index.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="app.html" class="btn btn-neutral float-right" title="Mobile App Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="vision/lifting_barrier.html" class="btn btn-neutral float-left" title="Lifting Barrier Control" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="voice/speech_to_text.html" class="btn btn-neutral float-right" title="Speech To Text" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
