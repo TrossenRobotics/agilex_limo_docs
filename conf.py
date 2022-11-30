@@ -52,7 +52,11 @@ language = None
 
 # List of patterns, relative to source directory, that match files and directories to ignore when
 # looking for source files. This pattern also affects html_static_path and html_extra_path .
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = [
+    '_build',
+    'Thumbs.db',
+    '.DS_Store',
+]
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
@@ -63,8 +67,8 @@ pygments_style = 'sphinx'
 # themes.
 html_theme = 'sphinx_rtd_theme'
 
-# If true, images itself links to the original image if it doesn’t have
-# ‘target’ option or scale related options: ‘scale’, ‘width’, ‘height’.
+# If true, images itself links to the original image if it doesn’t have ‘target’ option or scale
+# related options: ‘scale’, ‘width’, ‘height’.
 html_scaled_image_link = False
 
 # Set the html page title

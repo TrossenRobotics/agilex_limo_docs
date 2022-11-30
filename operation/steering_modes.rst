@@ -67,15 +67,17 @@ Pull up the latches on both sides, turn 30 degrees clockwise to make the longer 
 latches points to the front of the vehicle body, and then they will be stuck. When the vehicle
 light turns solid green, the robot is in Ackermann steering mode.
 
-.. list-table::
-    :align: center
-    :widths: 50 50
+.. container:: no-table
 
-    * - .. image:: _images/ackermann_1.png
-            :align: center
-      - .. image:: _images/ackermann_2.png
-            :align: center
-            :width: 90%
+    .. list-table::
+        :align: center
+        :widths: 50 50
+
+        * - .. image:: _images/ackermann_1.png
+                :align: center
+          - .. image:: _images/ackermann_2.png
+                :align: center
+                :width: 90%
 
 Switching to Differential
 -------------------------
@@ -85,15 +87,17 @@ latches points to the front of the vehicle body. At this point, it is in inserti
 the tire angle to align the hole so that the latch is inserted. When the vehicle light turns solid
 yellow, the the robot is in Four-wheel Differential steering mode.
 
-.. list-table::
-    :align: center
-    :widths: 50 50
+.. container:: no-table
 
-    * - .. image:: _images/differential_1.png
-            :align: center
-            :width: 85%
-      - .. image:: _images/differential_2.png
-            :align: center
+    .. list-table::
+        :align: center
+        :widths: 50 50
+
+        * - .. image:: _images/differential_1.png
+                :align: center
+                :width: 85%
+          - .. image:: _images/differential_2.png
+                :align: center
 
 Switching to Tracked
 --------------------
@@ -115,16 +119,18 @@ First remove the hubcaps and tires, leaving only the hub motors. Then, ensuring 
 roller of each Mecanum wheel is facing the center of the body, install the Mecanum wheel with the
 included M3*5 screws.
 
-.. list-table::
-    :align: center
-    :widths: 33 33 33
+.. container:: no-table
 
-    * - .. image:: _images/mecanum_1.png
-            :align: center
-      - .. image:: _images/mecanum_2.png
-            :align: center
-      - .. image:: _images/mecanum_3.png
-            :align: center
+    .. list-table::
+        :align: center
+        :widths: 33 33 33
+
+        * - .. image:: _images/mecanum_1.png
+                :align: center
+          - .. image:: _images/mecanum_2.png
+                :align: center
+          - .. image:: _images/mecanum_3.png
+                :align: center
 
 .. note::
 

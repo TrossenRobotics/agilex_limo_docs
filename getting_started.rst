@@ -2,6 +2,9 @@
 Getting Started
 ===============
 
+These guides will walk you through the setup process for your LIMO, the remote control mobile
+application, and your development environments.
+
 .. toctree::
 
     getting_started/first_time_use.rst

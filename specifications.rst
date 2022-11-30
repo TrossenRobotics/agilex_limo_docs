@@ -36,5 +36,6 @@ Your Simulation Table should come with the following:
 *   1x Hill
 *   1x Whiteboard
 *   1x Set of Uppercase Letters, Lowercase Letters, Numbers
-*   1x Set of Large Recognition Characters (ABCD)
+*   1x Set of Location Recognition Characters (ABCD)
 *   1x Lifting Lever
+*   1x Set of Alvar AR Tags

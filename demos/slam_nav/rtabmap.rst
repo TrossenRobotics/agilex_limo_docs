@@ -115,6 +115,14 @@ Localization
 
         $  roslaunch limo_bringup rtabmap_rviz.launch
 
+    .. note::
+
+        The robot may need to detect more visual features on initialization before it can localize
+        itself. To do this, drive the robot around until it appears to be in the correct location
+        in RViz. See `rtabmap_ros issue #220`_ for details and other potential workarounds.
+
+.. _`rtabmap_ros issue #220`: https://github.com/introlab/rtabmap_ros/issues/220
+
 6.  Use the **2D Nav Goal** button to set your navigation goal as shown below.
 
     .. image:: _images/rtabmap_2.png
