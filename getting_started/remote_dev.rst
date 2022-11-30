@@ -18,8 +18,6 @@ connection between your remote computer and the LIMO are below:
 1.  Download and install the version of NoMachine matching your remote computer's OS from the
     `NoMachine download page`_. Follow the instructions for installation.
 
-.. _`NoMachine download page`: https://www.nomachine.com/download
-
 2.  Make sure that your remote computer and your LIMO are on the same Wi-Fi network.
 
 3.  Open NoMachine on your remote computer.
@@ -47,6 +45,8 @@ connection between your remote computer and the LIMO are below:
     .. image:: _images/nomachine_connected.png
         :align: center
 
+.. _`NoMachine download page`: https://www.nomachine.com/download
+
 .. _secure-shell-protocol-setup-linux_label:
 
 Linux Secure Shell Protocol (SSH) Setup
@@ -73,7 +73,8 @@ from a remote computer.
 
 3.  Make sure that your remote computer and your LIMO are on the same Wi-Fi network.
 
-4.  SSH into the LIMO from your remote computer with the display forwarding flag ``-X``.
+4.  SSH into the LIMO from your remote computer with the display forwarding flag ``-X``. The
+    password is ``agx``.
 
     .. code-block:: console
 
@@ -90,7 +91,7 @@ from a remote computer.
 
     .. note::
 
-        If prompted, enter the password ``agx`` and accept the SSH key.
+        If prompted, accept the SSH key.
 
     .. note::
 
