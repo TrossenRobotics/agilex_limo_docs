@@ -2,6 +2,10 @@
 LIMO Specifications
 ===================
 
+.. image:: _images/limo.png
+    :align: center
+    :width: 30%
+
 Specifications Overview
 =======================
 
@@ -131,43 +135,45 @@ Rear Display
 LIMO Component Overview
 =======================
 
-.. list-table::
-    :widths: 70 30
+.. container:: no-table
 
-    * - .. image:: _images/limo_front_right_labelled.png
-            :align: center
+  .. list-table::
+      :widths: 70 30
 
-      - 1.  Wi-Fi/Bluetooth Antennas
-        2.  ORBBEC® Dabai Stereo Depth Camera
-        3.  Front Display
-        4.  EAI X2L LiDAR
-        5.  Hub Motor
-        6.  RBG Status Indicator LEDs
-        7.  Four-wheel Differential/Ackermann Steering Mode Switching Latches
-        8.  Power Indicator
-        9.  Left Speaker
-        10. Left Seagull Door
+      * - .. image:: _images/limo_front_right_labelled.png
+              :align: center
 
-    * - .. image:: _images/limo_rear_left_labelled.png
-            :align: center
+        - 1.  Wi-Fi/Bluetooth Antennas
+          2.  ORBBEC® Dabai Stereo Depth Camera
+          3.  Front Display
+          4.  EAI X2L LiDAR
+          5.  Hub Motor
+          6.  RBG Status Indicator LEDs
+          7.  Four-wheel Differential/Ackermann Steering Mode Switching Latches
+          8.  Power Indicator
+          9.  Left Speaker
+          10. Left Seagull Door
 
-      - 11. Rear Touchscreen Display
-        12. Batter Compartment Door
-        13. Power Button
-        14. Right Seagull Door
-        15. Right Speaker
+      * - .. image:: _images/limo_rear_left_labelled.png
+              :align: center
 
-    * - .. image:: _images/limo_front_right_open_labelled.png
-            :align: center
+        - 11. Rear Touchscreen Display
+          12. Batter Compartment Door
+          13. Power Button
+          14. Right Seagull Door
+          15. Right Speaker
 
-      - 16. USB Hub
+      * - .. image:: _images/limo_front_right_open_labelled.png
+              :align: center
 
-    * - .. image:: _images/limo_rear_left_open_labelled.png
-            :align: center
+        - 16. USB Hub
 
-      - 17. Voice Module
-        18. NVIDIA Jetson Nano (4G)
-        19. Battery
+      * - .. image:: _images/limo_rear_left_open_labelled.png
+              :align: center
+
+        - 17. Voice Module
+          18. NVIDIA Jetson Nano (4G)
+          19. Battery
 
 Major Dimensions
 ================
