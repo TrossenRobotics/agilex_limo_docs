@@ -74,11 +74,11 @@ a {
  */
 
 table.docutils tr.row-odd td {
-    background-color: transparent !important;
+    background-color: transparent;
 }
 
 table.docutils tr.row-even td {
-    background-color: #f3f6f6 !important;
+    background-color: #f3f6f6;
 }
 
 
@@ -185,4 +185,19 @@ div.highlight {
 
 label.static-container:hover .static {
     opacity: 0;
+}
+
+
+/*
+    Define class that makes table borders invisible (for structuring content)
+*/
+
+div.no-table.container,
+div.no-table.container table,
+div.no-table.container td,
+div.no-table.container th,
+div.no-table.container tr,
+div.no-table.container tbody {
+    border: transparent !important;
+    background-color: transparent !important;
 }

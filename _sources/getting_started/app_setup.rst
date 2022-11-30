@@ -2,34 +2,64 @@
 Mobile App Setup
 ================
 
-1.  Download and install the controller application to your mobile phone using the QR codes below.
+.. tabs::
 
-    .. list-table::
-        :align: center
+    .. group-tab:: Android
 
-        * - Android
-          - iOS
-        * - .. image:: _images/app_android.png
+        1.  Download and install the controller application to your mobile phone using the QR code
+            below.
+
+                .. image:: _images/app_android_qr.png
+                    :align: center
+
+        2.  Tap on the Bluetooth icon in the upper left to open the connection menu.
+
+            .. image:: _images/app_android_home.png
                 :align: center
-          - .. image:: _images/app_ios.png
+                :width: 70%
+
+        3.  Select the connection with the same name as the one on the front of your robot.
+
+            .. image:: _images/app_android_nearby.png
                 :align: center
+                :width: 70%
 
-2.  Tap on the Bluetooth icon in the upper left to open the connection menu.
+        4.  Once connected, you will see the battery level of your robot as well as the connection
+            symbol. You should also be able to control your robot. Find information on controlling
+            your robot using the mobile app in the :doc:`App Operation Guide</operation/app>`.
 
-    .. image:: _images/app_home.png
-        :align: center
-        :width: 70%
+            .. image:: _images/app_android_connected.png
+                :align: center
+                :width: 70%
 
-3.  Select the connection with the same name as the one on the front of your robot.
+    .. group-tab:: iOS
 
-    .. image:: _images/app_nearby.png
-        :align: center
-        :width: 70%
+        1.  Download and install the controller application to your mobile phone using the QR code
+            below.
 
-4.  Once connected, you will see the battery level of your robot as well as the connection symbol.
-    You should also be able to control your robot. Find information on controlling your robot using
-    the mobile app in the :doc:`App Operation Guide</operation/app>`.
+                .. image:: _images/app_ios_qr.png
+                    :align: center
 
-    .. image:: _images/app_connected.png
-        :align: center
-        :width: 70%
+            .. note::
+
+                If you have difficulty installing the application, you can search for `AgileX`_ on the
+                App Store instead.
+
+        2.  Select the connection with the same name as the one on the front of your robot.
+
+            .. image:: _images/app_ios_nearby.png
+                :align: center
+                :width: 70%
+
+        3.  Once connected, you will see the battery level of your robot as well as the connection
+            symbol. You should also be able to control your robot. Find information on controlling
+            your robot using the mobile app in the :doc:`App Operation Guide</operation/app>`.
+
+            .. image:: _images/app_ios_connected.png
+                :align: center
+                :width: 70%
+
+.. _`AgileX`: https://apps.apple.com/us/app/agilex/id1602170455
+
+Continue on to the :doc:`Mobile App Usage <../operation/app>` for details on how to control and configure your LIMO with the
+newly installed app.

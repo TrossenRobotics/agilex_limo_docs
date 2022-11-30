@@ -200,7 +200,15 @@ displayed by the <kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$  roslaunch limo_bringup rtabmap_rviz.launch
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The robot may need to detect more visual features on initialization before it can localize
+itself. To do this, drive the robot around until it appears to be in the correct location
+in RViz. See <a class="reference external" href="https://github.com/introlab/rtabmap_ros/issues/220" rel="noopener noreferrer" target="_blank">rtabmap_ros issue #220</a> for details and other potential workarounds.</p>
+</div>
 </li>
+</ol>
+<ol class="arabic" start="6">
 <li><p class="first">Use the <strong>2D Nav Goal</strong> button to set your navigation goal as shown below.</p>
 <img alt="../../_images/rtabmap_2.png" class="align-center" src="../../_images/rtabmap_2.png" style="width: 80%;" />
 <p>A green path will be displayed in the map indicating the planned path, and the robot will

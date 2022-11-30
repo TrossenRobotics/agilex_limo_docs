@@ -1,6 +1,6 @@
-================================
-Upgrade LIMO Controller Firmware
-================================
+==============================
+Flash LIMO Controller Firmware
+==============================
 
 1.  On the LIMO's Jetson Nano, download the latest firmware image from the
     ``limo_software/limo_firmware update`` directory of AgileX's `limo-doc GitHub repository`_. It

@@ -26,8 +26,8 @@ What's Here
     LIMO.
 *   :doc:`specifications` - Contains specification information for the LIMO and the Simulation
     Table.
-*   :doc:`tips_and_tricks` - Small guides unrelated to the demos or the general operation of the
-    robot.
+*   :doc:`tips_and_tricks` - These small guides are unrelated to the demos or the general operation
+    of the robot, but may be helpful.
 
 Table of Contents:
 ==================

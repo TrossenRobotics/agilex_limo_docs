@@ -1,6 +1,6 @@
-==================================
-Flash the LIMO's Jetson Nano Image
-==================================
+=======================
+Flash Jetson Nano Image
+=======================
 
 1.  Download and install `balenaEtcher`_ on a PC according to its operating system and
     architecture.
