@@ -28,6 +28,7 @@ What's Here
     Table.
 *   :doc:`tips_and_tricks` - These small guides are unrelated to the demos or the general operation
     of the robot, but may be helpful.
+*   :doc:`downloads` - Downloadable content related to the LIMO.
 
 Table of Contents:
 ==================
@@ -41,6 +42,7 @@ Table of Contents:
     demos.rst
     specifications.rst
     tips_and_tricks.rst
+    downloads.rst
 
 .. note::
 
